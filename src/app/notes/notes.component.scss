@@ -1,0 +1,73 @@
+.header {
+    width: 100%;
+    height: 10vh; 
+    
+    padding-left: 20px;
+
+    display: flex;
+    align-items: center;    
+
+    border-bottom: 5px solid rgb(67, 67, 82);
+}
+.container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: stretch;
+}
+.notes {
+    min-width: 300px;
+    height: 100%;
+
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    background-color: rgb(179, 195, 206, 0.2);
+    border-right: 5px solid rgb(67, 67, 82);
+}
+
+.note {
+    width: 100%;
+    height: 60px;
+
+    padding-left: 5%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: white;
+
+    cursor: pointer;
+}
+.selected {
+    background-color: #2396f2;
+    color: white;
+}
+.browser {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+
+    padding: 2%;
+    text-align: justify;
+}
+.new_note {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 2%;
+}
+.note_header {
+    color: #2396f2;
+}
+.note_text{
+    font-size: 24px;
+}

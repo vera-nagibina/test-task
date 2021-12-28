@@ -1,0 +1,34 @@
+<div class="header">
+    <h1>Мои заметки</h1>
+</div>
+<div class="container">    
+    <div class="notes">
+        <button pButton type="button" label="Добавить заметку" (click) = "add()"></button>
+        <div class="note" *ngFor = "let iterNote of notes"
+        
+        (click)="select(iterNote)"
+        [ngClass]="{'selected': note.text === iterNote.text}"
+        >
+        <h2>{{iterNote.header}}</h2>
+    </div>
+    </div>
+    <div class="browser" *ngIf = "!isVisible">
+        <h1 class="note_header">{{note.header}}</h1>
+        <span class="note_text">{{note.text}}</span>
+    </div>
+    <form  class= "new_note" [formGroup]="form" *ngIf = "isVisible">
+        <label for="header">Введите заголовок</label>
+        <input id="header" type="text" pInputText formControlName="header"/>
+        <label for="text">Введите содержание</label>
+        <textarea id="text" rows="20" pInputTextarea formControlName="text"></textarea>
+        <span class="p-buttonset">
+            <button pButton pRipple label="Сохранить" icon="pi pi-check"
+            [disabled]="form.invalid"
+            (click)="saveNote()"
+            ></button>
+            <button pButton pRipple label="Отмена" icon="pi pi-times"
+            (click)="cancel()"
+            ></button>
+        </span>
+    </form>
+</div>
